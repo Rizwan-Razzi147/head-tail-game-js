@@ -1,0 +1,70 @@
+!<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="head" onclick="Head()">Head</button>
+    <button id="tail" onclick="Tail()">Tail</button>
+
+    <br />
+    playerscore:
+    <h1 id="score">0</h1>
+    computer score:
+    <h1 id="score1">0</h1>
+    <div id="message"></div>
+
+
+    <script>
+      var head = document.getElementById("head");
+      var tail = document.getElementById("tail");
+      var score = document.getElementById("score");
+      var score1 = document.getElementById("score1");
+      var message = document.getElementById("message");
+      
+      var toss = ["Head", "Tail"];
+      var playerScore = 0;
+      var computerScore = 0;
+      function Head() {
+        var player = head.innerHTML;
+        console.log(player, "player");
+        var random = Math.floor(Math.random() * 2);
+        var computer = toss[random];
+
+        console.log(computer, "computer");
+
+        if (player == computer) {
+          message.innerHTML = "Plawer won";
+          playerScore++;
+          score.innerHTML = playerScore;
+        } else {
+          message.innerHTML = "computer won";
+          computerScore++;
+          score1.innerHTML = computerScore;
+        }
+      }
+
+      function Tail() {
+        var player = tail.innerHTML;
+        console.log(player, "player");
+        var random = Math.floor(Math.random() * 2);
+        var computer = toss[random];
+
+        console.log(computer, "computer");
+
+        if (player == computer) {
+          message.innerHTML = "Plawer won";
+          playerScore++;
+          score.innerHTML = playerScore;
+        } else {
+          message.innerHTML = "computer won";
+          computerScore++;
+          score1.innerHTML = computerScore;
+        }
+      }
+    </script>
+  </body>
+</html>
